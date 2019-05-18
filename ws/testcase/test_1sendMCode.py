@@ -1,6 +1,5 @@
 import pytest
 import allure
-from webservice.ws.common.clients import Client
 from webservice.ws.common.do_execl import Excel
 from webservice.ws.common import paths
 from webservice.ws.common.do_replace import replace
