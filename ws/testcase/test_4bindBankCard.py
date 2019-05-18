@@ -26,7 +26,7 @@ class TestBindBankCard:
         # self.mysqls = Mysql('user_db')
         self.client = WebServiceClient(TestBindBankCard.datas[0].url)
 
-    @allure.story('注册接口')
+    @allure.story('绑定银行卡接口')
     @pytest.mark.parametrize('case', datas)
     def test_verifyuserAuth(self, case):
         self.logs.get_log('info','测试场景:{}'.format(case.title))

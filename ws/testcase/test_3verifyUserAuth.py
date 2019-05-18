@@ -29,7 +29,7 @@ class TestVerifyUserAuth:
         setattr(TestData,'true_name',user.name)
         setattr(TestData, 'cre_id', user.cardid)
 
-    @allure.story('注册接口')
+    @allure.story('实名认证接口')
     @pytest.mark.parametrize('case', datas)
     def test_verifyuserAuth(self, case):
         self.logs.get_log('info','测试场景:{}'.format(case.title))
