@@ -680,3 +680,473 @@
 2019-05-16 22:41:20,019-bindBankCard-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '银行卡号检验错误'}
 2019-05-16 22:41:20,020-bindBankCard-INFO-40-断言结果:FAIL
 2019-05-16 22:41:20,076-bindBankCard-INFO-40------测试完成-----
+2019-05-17 17:19:15,916-sendmcode-INFO-40-测试场景:手机号为空
+2019-05-17 17:19:15,917-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': None, 'tmpl_id': '1'}
+2019-05-17 17:19:15,996-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-17 17:19:15,997-sendmcode-INFO-40-断言结果:PASS
+2019-05-17 17:19:16,068-sendmcode-INFO-40-测试场景:短信模板为空
+2019-05-17 17:19:16,068-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '15927012179', 'tmpl_id': None}
+2019-05-17 17:19:16,146-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '短信模板ID错误'}
+2019-05-17 17:19:16,146-sendmcode-INFO-40-断言结果:PASS
+2019-05-17 17:19:16,237-sendmcode-INFO-40-测试场景:ip地址为空
+2019-05-17 17:19:16,237-sendmcode-DEBUG-42-请求参数:{'client_ip': None, 'mobile': '15927012179', 'tmpl_id': '1'}
+2019-05-17 17:19:16,315-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '用户IP不能为空'}
+2019-05-17 17:19:16,315-sendmcode-INFO-40-断言结果:PASS
+2019-05-17 17:19:16,383-sendmcode-INFO-40-测试场景:手机号格式不对
+2019-05-17 17:19:16,383-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '181065747', 'tmpl_id': '1'}
+2019-05-17 17:19:16,458-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-17 17:19:16,458-sendmcode-INFO-40-断言结果:PASS
+2019-05-17 17:19:16,532-sendmcode-INFO-40-测试场景:发送短信成功
+2019-05-17 17:19:16,532-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '15927012179', 'tmpl_id': '1'}
+2019-05-17 17:19:16,900-sendmcode-INFO-40-查询结果:{'Fmobile_no': '15927012179', 'Ftmpl_id': 1, 'Fverify_code': '874502', 'Frela_key': None, 'Frela_info': None, 'Fchk_suc_times': 0, 'Fchk_err_times': 0, 'Fclient_ip': '127.0.0.1', 'Fsend_time': datetime.datetime(2019, 5, 17, 17, 19, 20), 'Fcheck_time': None, 'Fexpired_time': datetime.datetime(2019, 5, 17, 17, 25, 20), 'Fstandby1': None, 'Fstandby2': None}
+2019-05-17 17:19:16,900-sendmcode-INFO-40-测试结果:PASS
+2019-05-17 17:19:16,900-sendmcode-INFO-40-断言结果:PASS
+2019-05-17 17:19:16,984-UserRegister-INFO-40------测试开始-----
+2019-05-17 17:19:17,358-UserRegister-INFO-40-测试场景:输入验证码超时，注册不成功
+2019-05-17 17:19:17,358-UserRegister-DEBUG-42-请求参数:{"verify_code": "343266", "user_id": "刘备", "channel_id": "1", "pwd": "123456", "mobile": "13328263848", "ip": "127.0.0.1"}
+2019-05-17 17:19:17,505-UserRegister-DEBUG-42-预期结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-17 17:19:17,506-UserRegister-DEBUG-42-实际结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-17 17:19:17,672-UserRegister-INFO-40-断言结果:PASS
+2019-05-17 17:19:17,737-UserRegister-INFO-40-测试场景:用户注册成功
+2019-05-17 17:19:17,737-UserRegister-DEBUG-42-请求参数:{"verify_code": "874502", "user_id": "张桂香", "channel_id": "1", "pwd": "123456", "mobile": "15927012179", "ip": "127.0.0.1"}
+2019-05-17 17:19:17,965-UserRegister-DEBUG-42-预期结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-17 17:19:17,965-UserRegister-DEBUG-42-实际结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-17 17:19:18,127-UserRegister-INFO-40-断言结果:PASS
+2019-05-17 17:19:18,196-UserRegister-INFO-40-测试场景:已经注册过的不允许注册
+2019-05-17 17:19:18,196-UserRegister-DEBUG-42-请求参数:{"verify_code": "874502", "user_id": "张桂香", "channel_id": "1", "pwd": "123456", "mobile": "15927012179", "ip": "127.0.0.1"}
+2019-05-17 17:19:18,299-UserRegister-DEBUG-42-预期结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-17 17:19:18,300-UserRegister-DEBUG-42-实际结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-17 17:19:18,303-UserRegister-INFO-40-断言结果:PASS
+2019-05-17 17:19:18,376-UserRegister-INFO-40-测试场景:输入别的手机号验证码
+2019-05-17 17:19:18,376-UserRegister-DEBUG-42-请求参数:{"verify_code": "874502", "user_id": "末年", "channel_id": "1", "pwd": "123456", "mobile": "18800001112", "ip": "127.0.0.1"}
+2019-05-17 17:19:18,501-UserRegister-DEBUG-42-预期结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-17 17:19:18,501-UserRegister-DEBUG-42-实际结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-17 17:19:18,616-UserRegister-INFO-40-断言结果:PASS
+2019-05-17 17:19:18,682-UserRegister-INFO-40-测试场景:验证码为空
+2019-05-17 17:19:18,682-UserRegister-DEBUG-42-请求参数:{"verify_code": None, "user_id": "末年1", "channel_id": "1", "pwd": "123456", "mobile": "18800001113", "ip": "127.0.0.1"}
+2019-05-17 17:19:18,758-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-17 17:19:18,758-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-17 17:19:18,875-UserRegister-INFO-40-断言结果:PASS
+2019-05-17 17:19:18,944-UserRegister-INFO-40-测试场景:手机号格式不对
+2019-05-17 17:19:18,945-UserRegister-DEBUG-42-请求参数:{"verify_code": "874502", "user_id": "末年2", "channel_id": "1", "pwd": "123456", "mobile": "1880000112", "ip": "127.0.0.1"}
+2019-05-17 17:19:19,018-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-17 17:19:19,018-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-17 17:19:19,155-UserRegister-INFO-40-断言结果:PASS
+2019-05-17 17:19:19,263-UserRegister-INFO-40-测试场景:手机号为空
+2019-05-17 17:19:19,263-UserRegister-DEBUG-42-请求参数:{"verify_code": "874502", "user_id": "末年3", "channel_id": "1", "pwd": "123456", "mobile": None, "ip": "127.0.0.1"}
+2019-05-17 17:19:19,330-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-17 17:19:19,330-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-17 17:19:19,484-UserRegister-INFO-40-断言结果:PASS
+2019-05-17 17:19:19,552-UserRegister-INFO-40------测试完成-----
+2019-05-17 17:19:19,562-verifyUserAuth-INFO-40------测试开始-----
+2019-05-17 17:19:19,700-verifyUserAuth-INFO-40-测试场景:未注册的实名认证失败
+2019-05-17 17:19:19,700-verifyUserAuth-DEBUG-42-请求参数:{"uid": "010223", "true_name": "曹操", "cre_id": "360428195607232231"}
+2019-05-17 17:19:19,797-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042002', 'retInfo': '用户不存在'}
+2019-05-17 17:19:19,900-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-17 17:19:19,963-verifyUserAuth-INFO-40-测试场景:用户ID空，实名认证失败
+2019-05-17 17:19:19,963-verifyUserAuth-DEBUG-42-请求参数:{"uid": None, "true_name": "刘备", "cre_id": "360428195607232232"}
+2019-05-17 17:19:20,058-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '用户ID错误'}
+2019-05-17 17:19:20,196-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-17 17:19:20,263-verifyUserAuth-INFO-40-测试场景:姓名为空，实名认证失败
+2019-05-17 17:19:20,263-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100010997, "true_name": None, "cre_id": "360428195607232233"}
+2019-05-17 17:19:20,349-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '真实姓名错误'}
+2019-05-17 17:19:20,552-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-17 17:19:20,623-verifyUserAuth-INFO-40-测试场景:身份证为空，实名认证失败
+2019-05-17 17:19:20,623-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100010997, "true_name": "孙策", "cre_id": "360428195607232234"}
+2019-05-17 17:19:20,725-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号检验错误'}
+2019-05-17 17:19:20,889-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-17 17:19:20,950-verifyUserAuth-INFO-40-测试场景:身份证格式不正确，实名认证失败
+2019-05-17 17:19:20,950-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100010997, "true_name": "孙策1", "cre_id": "3604281956"}
+2019-05-17 17:19:21,040-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号错误'}
+2019-05-17 17:19:21,170-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-17 17:19:21,243-verifyUserAuth-INFO-40-测试场景:用户实名认证成功
+2019-05-17 17:19:21,243-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100010997", "true_name": "李金凤", "cre_id": "431224195501171971"}
+2019-05-17 17:19:21,383-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-17 17:19:21,577-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-17 17:19:21,651-verifyUserAuth-INFO-40-测试场景:重复实名认证
+2019-05-17 17:19:21,651-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100010997", "true_name": "李金凤", "cre_id": "431224195501171971"}
+2019-05-17 17:19:21,764-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042033', 'retInfo': '该身份证已经进行过实名认证'}
+2019-05-17 17:19:21,766-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-17 17:19:21,831-verifyUserAuth-INFO-40------测试完成-----
+2019-05-17 17:19:21,831-bindBankCard-INFO-40------测试开始-----
+2019-05-17 17:19:21,862-bindBankCard-INFO-40-测试场景:绑卡成功
+2019-05-17 17:19:21,862-bindBankCard-DEBUG-42-请求参数:{"uid": "100010997","pay_pwd": "123456","mobile": "18205673747","cre_id": "431224195501171971","user_name": "李金凤","cardid": "6226095712899116 ","bank_type": "1001","bank_name": "建设银行","bank_area": None,"bank_city": None}
+2019-05-17 17:19:21,964-bindBankCard-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '银行卡号检验错误'}
+2019-05-17 17:19:21,964-bindBankCard-INFO-40-断言结果:FAIL
+2019-05-17 17:19:22,032-bindBankCard-INFO-40------测试完成-----
+2019-05-18 08:39:48,403-sendmcode-INFO-40-测试场景:手机号为空
+2019-05-18 08:39:48,404-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': None, 'tmpl_id': '1'}
+2019-05-18 08:39:48,523-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-18 08:39:48,523-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:39:48,592-sendmcode-INFO-40-测试场景:短信模板为空
+2019-05-18 08:39:48,592-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '13605515668', 'tmpl_id': None}
+2019-05-18 08:39:48,673-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '短信模板ID错误'}
+2019-05-18 08:39:48,673-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:39:48,742-sendmcode-INFO-40-测试场景:ip地址为空
+2019-05-18 08:39:48,742-sendmcode-DEBUG-42-请求参数:{'client_ip': None, 'mobile': '13605515668', 'tmpl_id': '1'}
+2019-05-18 08:39:48,822-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '用户IP不能为空'}
+2019-05-18 08:39:48,822-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:39:48,891-sendmcode-INFO-40-测试场景:手机号格式不对
+2019-05-18 08:39:48,891-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '181065747', 'tmpl_id': '1'}
+2019-05-18 08:39:48,969-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-18 08:39:48,969-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:39:49,043-sendmcode-INFO-40-测试场景:发送短信成功
+2019-05-18 08:39:49,043-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '13605515668', 'tmpl_id': '1'}
+2019-05-18 08:39:49,478-sendmcode-INFO-40-查询结果:{'Fmobile_no': '13605515668', 'Ftmpl_id': 1, 'Fverify_code': '315775', 'Frela_key': None, 'Frela_info': None, 'Fchk_suc_times': 0, 'Fchk_err_times': 0, 'Fclient_ip': '127.0.0.1', 'Fsend_time': datetime.datetime(2019, 5, 18, 8, 39, 53), 'Fcheck_time': None, 'Fexpired_time': datetime.datetime(2019, 5, 18, 8, 45, 53), 'Fstandby1': None, 'Fstandby2': None}
+2019-05-18 08:39:49,479-sendmcode-INFO-40-测试结果:PASS
+2019-05-18 08:39:49,480-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:39:49,555-UserRegister-INFO-40------测试开始-----
+2019-05-18 08:39:51,609-UserRegister-INFO-40-测试场景:输入验证码超时，注册不成功
+2019-05-18 08:39:51,609-UserRegister-DEBUG-42-请求参数:{"verify_code": "343266", "user_id": "刘备", "channel_id": "1", "pwd": "123456", "mobile": "13328263848", "ip": "127.0.0.1"}
+2019-05-18 08:39:51,802-UserRegister-DEBUG-42-预期结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-18 08:39:51,803-UserRegister-DEBUG-42-实际结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-18 08:39:51,943-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:39:52,007-UserRegister-INFO-40-测试场景:用户注册成功
+2019-05-18 08:39:52,008-UserRegister-DEBUG-42-请求参数:{"verify_code": "315775", "user_id": "王洋", "channel_id": "1", "pwd": "123456", "mobile": "13605515668", "ip": "127.0.0.1"}
+2019-05-18 08:39:52,313-UserRegister-DEBUG-42-预期结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:39:52,313-UserRegister-DEBUG-42-实际结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:39:52,491-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:39:52,558-UserRegister-INFO-40-测试场景:已经注册过的不允许注册
+2019-05-18 08:39:52,559-UserRegister-DEBUG-42-请求参数:{"verify_code": "315775", "user_id": "王洋", "channel_id": "1", "pwd": "123456", "mobile": "13605515668", "ip": "127.0.0.1"}
+2019-05-18 08:39:52,655-UserRegister-DEBUG-42-预期结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-18 08:39:52,655-UserRegister-DEBUG-42-实际结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-18 08:39:52,660-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:39:52,727-UserRegister-INFO-40-测试场景:输入别的手机号验证码
+2019-05-18 08:39:52,727-UserRegister-DEBUG-42-请求参数:{"verify_code": "315775", "user_id": "末年", "channel_id": "1", "pwd": "123456", "mobile": "18800001112", "ip": "127.0.0.1"}
+2019-05-18 08:39:52,892-UserRegister-DEBUG-42-预期结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-18 08:39:52,892-UserRegister-DEBUG-42-实际结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-18 08:39:53,029-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:39:53,097-UserRegister-INFO-40-测试场景:验证码为空
+2019-05-18 08:39:53,097-UserRegister-DEBUG-42-请求参数:{"verify_code": None, "user_id": "末年1", "channel_id": "1", "pwd": "123456", "mobile": "18800001113", "ip": "127.0.0.1"}
+2019-05-18 08:39:53,191-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-18 08:39:53,191-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-18 08:39:53,323-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:39:53,393-UserRegister-INFO-40-测试场景:手机号格式不对
+2019-05-18 08:39:53,394-UserRegister-DEBUG-42-请求参数:{"verify_code": "315775", "user_id": "末年2", "channel_id": "1", "pwd": "123456", "mobile": "1880000112", "ip": "127.0.0.1"}
+2019-05-18 08:39:53,486-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:39:53,486-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:39:53,618-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:39:53,691-UserRegister-INFO-40-测试场景:手机号为空
+2019-05-18 08:39:53,691-UserRegister-DEBUG-42-请求参数:{"verify_code": "315775", "user_id": "末年3", "channel_id": "1", "pwd": "123456", "mobile": None, "ip": "127.0.0.1"}
+2019-05-18 08:39:53,782-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:39:53,782-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:39:53,924-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:39:53,992-UserRegister-INFO-40------测试完成-----
+2019-05-18 08:39:54,003-verifyUserAuth-INFO-40------测试开始-----
+2019-05-18 08:39:54,200-verifyUserAuth-INFO-40-测试场景:未注册的实名认证失败
+2019-05-18 08:39:54,200-verifyUserAuth-DEBUG-42-请求参数:{"uid": "010223", "true_name": "曹操", "cre_id": "360428195607232231"}
+2019-05-18 08:39:54,300-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042002', 'retInfo': '用户不存在'}
+2019-05-18 08:39:54,437-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:39:54,503-verifyUserAuth-INFO-40-测试场景:用户ID空，实名认证失败
+2019-05-18 08:39:54,503-verifyUserAuth-DEBUG-42-请求参数:{"uid": None, "true_name": "刘备", "cre_id": "360428195607232232"}
+2019-05-18 08:39:54,592-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '用户ID错误'}
+2019-05-18 08:39:54,726-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:39:54,792-verifyUserAuth-INFO-40-测试场景:姓名为空，实名认证失败
+2019-05-18 08:39:54,792-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011012, "true_name": None, "cre_id": "360428195607232233"}
+2019-05-18 08:39:54,881-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '真实姓名错误'}
+2019-05-18 08:39:55,019-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:39:55,088-verifyUserAuth-INFO-40-测试场景:身份证为空，实名认证失败
+2019-05-18 08:39:55,088-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011012, "true_name": "孙策", "cre_id": "360428195607232234"}
+2019-05-18 08:39:55,176-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号检验错误'}
+2019-05-18 08:39:55,305-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:39:55,375-verifyUserAuth-INFO-40-测试场景:身份证格式不正确，实名认证失败
+2019-05-18 08:39:55,375-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011012, "true_name": "孙策1", "cre_id": "3604281956"}
+2019-05-18 08:39:55,465-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号错误'}
+2019-05-18 08:39:55,600-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:39:55,671-verifyUserAuth-INFO-40-测试场景:用户实名认证成功
+2019-05-18 08:39:55,671-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100011012", "true_name": "张建华", "cre_id": "340406196701283863"}
+2019-05-18 08:39:55,881-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:39:56,044-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:39:56,118-verifyUserAuth-INFO-40-测试场景:重复实名认证
+2019-05-18 08:39:56,118-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100011012", "true_name": "张建华", "cre_id": "340406196701283863"}
+2019-05-18 08:39:56,227-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042033', 'retInfo': '该身份证已经进行过实名认证'}
+2019-05-18 08:39:56,230-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:39:56,296-verifyUserAuth-INFO-40------测试完成-----
+2019-05-18 08:39:56,305-bindBankCard-INFO-40------测试开始-----
+2019-05-18 08:39:56,331-bindBankCard-INFO-40-测试场景:绑卡成功
+2019-05-18 08:39:56,331-bindBankCard-DEBUG-42-请求参数:{"uid": "100011012","pay_pwd": "123456","mobile": "18205673747","cre_id": "340406196701283863","user_name": "张建华","cardid": "6226095712899116 ","bank_type": "1001","bank_name": "建设银行","bank_area": None,"bank_city": None}
+2019-05-18 08:39:56,422-bindBankCard-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '银行卡号检验错误'}
+2019-05-18 08:39:56,424-bindBankCard-INFO-40-断言结果:FAIL
+2019-05-18 08:39:56,480-bindBankCard-INFO-40------测试完成-----
+2019-05-18 08:40:14,254-sendmcode-INFO-40-测试场景:手机号为空
+2019-05-18 08:40:14,255-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': None, 'tmpl_id': '1'}
+2019-05-18 08:40:14,331-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-18 08:40:14,331-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:14,399-sendmcode-INFO-40-测试场景:短信模板为空
+2019-05-18 08:40:14,399-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '13128454986', 'tmpl_id': None}
+2019-05-18 08:40:14,476-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '短信模板ID错误'}
+2019-05-18 08:40:14,476-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:14,544-sendmcode-INFO-40-测试场景:ip地址为空
+2019-05-18 08:40:14,544-sendmcode-DEBUG-42-请求参数:{'client_ip': None, 'mobile': '13128454986', 'tmpl_id': '1'}
+2019-05-18 08:40:14,628-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '用户IP不能为空'}
+2019-05-18 08:40:14,628-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:14,697-sendmcode-INFO-40-测试场景:手机号格式不对
+2019-05-18 08:40:14,697-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '181065747', 'tmpl_id': '1'}
+2019-05-18 08:40:14,779-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-18 08:40:14,779-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:14,851-sendmcode-INFO-40-测试场景:发送短信成功
+2019-05-18 08:40:14,851-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '13128454986', 'tmpl_id': '1'}
+2019-05-18 08:40:15,220-sendmcode-INFO-40-查询结果:{'Fmobile_no': '13128454986', 'Ftmpl_id': 1, 'Fverify_code': '650944', 'Frela_key': None, 'Frela_info': None, 'Fchk_suc_times': 0, 'Fchk_err_times': 0, 'Fclient_ip': '127.0.0.1', 'Fsend_time': datetime.datetime(2019, 5, 18, 8, 40, 19), 'Fcheck_time': None, 'Fexpired_time': datetime.datetime(2019, 5, 18, 8, 46, 19), 'Fstandby1': None, 'Fstandby2': None}
+2019-05-18 08:40:15,220-sendmcode-INFO-40-测试结果:PASS
+2019-05-18 08:40:15,223-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:15,297-UserRegister-INFO-40------测试开始-----
+2019-05-18 08:40:15,723-UserRegister-INFO-40-测试场景:输入验证码超时，注册不成功
+2019-05-18 08:40:15,724-UserRegister-DEBUG-42-请求参数:{"verify_code": "343266", "user_id": "刘备", "channel_id": "1", "pwd": "123456", "mobile": "13328263848", "ip": "127.0.0.1"}
+2019-05-18 08:40:15,854-UserRegister-DEBUG-42-预期结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-18 08:40:15,854-UserRegister-DEBUG-42-实际结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-18 08:40:15,984-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:16,049-UserRegister-INFO-40-测试场景:用户注册成功
+2019-05-18 08:40:16,049-UserRegister-DEBUG-42-请求参数:{"verify_code": "650944", "user_id": "戴阳", "channel_id": "1", "pwd": "123456", "mobile": "13128454986", "ip": "127.0.0.1"}
+2019-05-18 08:40:16,329-UserRegister-DEBUG-42-预期结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:40:16,329-UserRegister-DEBUG-42-实际结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:40:16,492-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:16,559-UserRegister-INFO-40-测试场景:已经注册过的不允许注册
+2019-05-18 08:40:16,559-UserRegister-DEBUG-42-请求参数:{"verify_code": "650944", "user_id": "戴阳", "channel_id": "1", "pwd": "123456", "mobile": "13128454986", "ip": "127.0.0.1"}
+2019-05-18 08:40:16,660-UserRegister-DEBUG-42-预期结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-18 08:40:16,660-UserRegister-DEBUG-42-实际结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-18 08:40:16,664-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:16,730-UserRegister-INFO-40-测试场景:输入别的手机号验证码
+2019-05-18 08:40:16,730-UserRegister-DEBUG-42-请求参数:{"verify_code": "650944", "user_id": "末年", "channel_id": "1", "pwd": "123456", "mobile": "18800001112", "ip": "127.0.0.1"}
+2019-05-18 08:40:16,852-UserRegister-DEBUG-42-预期结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-18 08:40:16,852-UserRegister-DEBUG-42-实际结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-18 08:40:16,982-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:17,051-UserRegister-INFO-40-测试场景:验证码为空
+2019-05-18 08:40:17,051-UserRegister-DEBUG-42-请求参数:{"verify_code": None, "user_id": "末年1", "channel_id": "1", "pwd": "123456", "mobile": "18800001113", "ip": "127.0.0.1"}
+2019-05-18 08:40:17,139-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-18 08:40:17,139-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-18 08:40:17,273-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:17,344-UserRegister-INFO-40-测试场景:手机号格式不对
+2019-05-18 08:40:17,345-UserRegister-DEBUG-42-请求参数:{"verify_code": "650944", "user_id": "末年2", "channel_id": "1", "pwd": "123456", "mobile": "1880000112", "ip": "127.0.0.1"}
+2019-05-18 08:40:17,433-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:40:17,433-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:40:17,578-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:17,651-UserRegister-INFO-40-测试场景:手机号为空
+2019-05-18 08:40:17,651-UserRegister-DEBUG-42-请求参数:{"verify_code": "650944", "user_id": "末年3", "channel_id": "1", "pwd": "123456", "mobile": None, "ip": "127.0.0.1"}
+2019-05-18 08:40:17,732-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:40:17,732-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:40:17,865-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:17,932-UserRegister-INFO-40------测试完成-----
+2019-05-18 08:40:17,943-verifyUserAuth-INFO-40------测试开始-----
+2019-05-18 08:40:18,139-verifyUserAuth-INFO-40-测试场景:未注册的实名认证失败
+2019-05-18 08:40:18,139-verifyUserAuth-DEBUG-42-请求参数:{"uid": "010223", "true_name": "曹操", "cre_id": "360428195607232231"}
+2019-05-18 08:40:18,240-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042002', 'retInfo': '用户不存在'}
+2019-05-18 08:40:18,375-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:18,441-verifyUserAuth-INFO-40-测试场景:用户ID空，实名认证失败
+2019-05-18 08:40:18,441-verifyUserAuth-DEBUG-42-请求参数:{"uid": None, "true_name": "刘备", "cre_id": "360428195607232232"}
+2019-05-18 08:40:18,531-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '用户ID错误'}
+2019-05-18 08:40:18,670-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:18,736-verifyUserAuth-INFO-40-测试场景:姓名为空，实名认证失败
+2019-05-18 08:40:18,736-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011013, "true_name": None, "cre_id": "360428195607232233"}
+2019-05-18 08:40:18,827-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '真实姓名错误'}
+2019-05-18 08:40:18,955-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:19,023-verifyUserAuth-INFO-40-测试场景:身份证为空，实名认证失败
+2019-05-18 08:40:19,023-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011013, "true_name": "孙策", "cre_id": "360428195607232234"}
+2019-05-18 08:40:19,112-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号检验错误'}
+2019-05-18 08:40:19,251-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:19,319-verifyUserAuth-INFO-40-测试场景:身份证格式不正确，实名认证失败
+2019-05-18 08:40:19,319-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011013, "true_name": "孙策1", "cre_id": "3604281956"}
+2019-05-18 08:40:19,407-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号错误'}
+2019-05-18 08:40:19,534-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:19,606-verifyUserAuth-INFO-40-测试场景:用户实名认证成功
+2019-05-18 08:40:19,606-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100011013", "true_name": "苏刚", "cre_id": "341122194208097122"}
+2019-05-18 08:40:19,740-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:40:19,911-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:19,982-verifyUserAuth-INFO-40-测试场景:重复实名认证
+2019-05-18 08:40:19,982-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100011013", "true_name": "苏刚", "cre_id": "341122194208097122"}
+2019-05-18 08:40:20,088-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042033', 'retInfo': '该身份证已经进行过实名认证'}
+2019-05-18 08:40:20,089-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:20,155-verifyUserAuth-INFO-40------测试完成-----
+2019-05-18 08:40:20,166-bindBankCard-INFO-40------测试开始-----
+2019-05-18 08:40:20,190-bindBankCard-INFO-40-测试场景:绑卡成功
+2019-05-18 08:40:20,190-bindBankCard-DEBUG-42-请求参数:{"uid": "100011013","pay_pwd": "123456","mobile": "18205673747","cre_id": "341122194208097122","user_name": "苏刚","cardid": "6226095712899116 ","bank_type": "1001","bank_name": "建设银行","bank_area": None,"bank_city": None}
+2019-05-18 08:40:20,281-bindBankCard-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '银行卡号检验错误'}
+2019-05-18 08:40:20,284-bindBankCard-INFO-40-断言结果:FAIL
+2019-05-18 08:40:20,342-bindBankCard-INFO-40------测试完成-----
+2019-05-18 08:40:42,934-sendmcode-INFO-40-测试场景:手机号为空
+2019-05-18 08:40:42,935-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': None, 'tmpl_id': '1'}
+2019-05-18 08:40:43,019-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-18 08:40:43,019-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:43,085-sendmcode-INFO-40-测试场景:短信模板为空
+2019-05-18 08:40:43,086-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '15056968150', 'tmpl_id': None}
+2019-05-18 08:40:43,164-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '短信模板ID错误'}
+2019-05-18 08:40:43,164-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:43,233-sendmcode-INFO-40-测试场景:ip地址为空
+2019-05-18 08:40:43,233-sendmcode-DEBUG-42-请求参数:{'client_ip': None, 'mobile': '15056968150', 'tmpl_id': '1'}
+2019-05-18 08:40:43,315-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '用户IP不能为空'}
+2019-05-18 08:40:43,316-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:43,385-sendmcode-INFO-40-测试场景:手机号格式不对
+2019-05-18 08:40:43,385-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '181065747', 'tmpl_id': '1'}
+2019-05-18 08:40:43,468-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-18 08:40:43,468-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:43,539-sendmcode-INFO-40-测试场景:发送短信成功
+2019-05-18 08:40:43,539-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '15056968150', 'tmpl_id': '1'}
+2019-05-18 08:40:43,929-sendmcode-INFO-40-查询结果:{'Fmobile_no': '15056968150', 'Ftmpl_id': 1, 'Fverify_code': '568629', 'Frela_key': None, 'Frela_info': None, 'Fchk_suc_times': 0, 'Fchk_err_times': 0, 'Fclient_ip': '127.0.0.1', 'Fsend_time': datetime.datetime(2019, 5, 18, 8, 40, 48), 'Fcheck_time': None, 'Fexpired_time': datetime.datetime(2019, 5, 18, 8, 46, 48), 'Fstandby1': None, 'Fstandby2': None}
+2019-05-18 08:40:43,929-sendmcode-INFO-40-测试结果:PASS
+2019-05-18 08:40:43,931-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:40:44,004-UserRegister-INFO-40------测试开始-----
+2019-05-18 08:40:44,436-UserRegister-INFO-40-测试场景:输入验证码超时，注册不成功
+2019-05-18 08:40:44,436-UserRegister-DEBUG-42-请求参数:{"verify_code": "343266", "user_id": "刘备", "channel_id": "1", "pwd": "123456", "mobile": "13328263848", "ip": "127.0.0.1"}
+2019-05-18 08:40:44,564-UserRegister-DEBUG-42-预期结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-18 08:40:44,564-UserRegister-DEBUG-42-实际结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-18 08:40:44,697-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:44,763-UserRegister-INFO-40-测试场景:用户注册成功
+2019-05-18 08:40:44,763-UserRegister-DEBUG-42-请求参数:{"verify_code": "568629", "user_id": "车彬", "channel_id": "1", "pwd": "123456", "mobile": "15056968150", "ip": "127.0.0.1"}
+2019-05-18 08:40:45,062-UserRegister-DEBUG-42-预期结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:40:45,062-UserRegister-DEBUG-42-实际结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:40:45,228-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:45,295-UserRegister-INFO-40-测试场景:已经注册过的不允许注册
+2019-05-18 08:40:45,295-UserRegister-DEBUG-42-请求参数:{"verify_code": "568629", "user_id": "车彬", "channel_id": "1", "pwd": "123456", "mobile": "15056968150", "ip": "127.0.0.1"}
+2019-05-18 08:40:45,398-UserRegister-DEBUG-42-预期结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-18 08:40:45,398-UserRegister-DEBUG-42-实际结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-18 08:40:45,401-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:45,468-UserRegister-INFO-40-测试场景:输入别的手机号验证码
+2019-05-18 08:40:45,468-UserRegister-DEBUG-42-请求参数:{"verify_code": "568629", "user_id": "末年", "channel_id": "1", "pwd": "123456", "mobile": "18800001112", "ip": "127.0.0.1"}
+2019-05-18 08:40:45,593-UserRegister-DEBUG-42-预期结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-18 08:40:45,593-UserRegister-DEBUG-42-实际结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-18 08:40:45,739-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:45,808-UserRegister-INFO-40-测试场景:验证码为空
+2019-05-18 08:40:45,808-UserRegister-DEBUG-42-请求参数:{"verify_code": None, "user_id": "末年1", "channel_id": "1", "pwd": "123456", "mobile": "18800001113", "ip": "127.0.0.1"}
+2019-05-18 08:40:45,904-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-18 08:40:45,904-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-18 08:40:46,047-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:46,116-UserRegister-INFO-40-测试场景:手机号格式不对
+2019-05-18 08:40:46,116-UserRegister-DEBUG-42-请求参数:{"verify_code": "568629", "user_id": "末年2", "channel_id": "1", "pwd": "123456", "mobile": "1880000112", "ip": "127.0.0.1"}
+2019-05-18 08:40:46,206-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:40:46,206-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:40:46,336-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:46,408-UserRegister-INFO-40-测试场景:手机号为空
+2019-05-18 08:40:46,408-UserRegister-DEBUG-42-请求参数:{"verify_code": "568629", "user_id": "末年3", "channel_id": "1", "pwd": "123456", "mobile": None, "ip": "127.0.0.1"}
+2019-05-18 08:40:46,500-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:40:46,500-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:40:46,633-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:40:46,700-UserRegister-INFO-40------测试完成-----
+2019-05-18 08:40:46,710-verifyUserAuth-INFO-40------测试开始-----
+2019-05-18 08:40:46,907-verifyUserAuth-INFO-40-测试场景:未注册的实名认证失败
+2019-05-18 08:40:46,907-verifyUserAuth-DEBUG-42-请求参数:{"uid": "010223", "true_name": "曹操", "cre_id": "360428195607232231"}
+2019-05-18 08:40:47,006-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042002', 'retInfo': '用户不存在'}
+2019-05-18 08:40:47,139-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:47,203-verifyUserAuth-INFO-40-测试场景:用户ID空，实名认证失败
+2019-05-18 08:40:47,203-verifyUserAuth-DEBUG-42-请求参数:{"uid": None, "true_name": "刘备", "cre_id": "360428195607232232"}
+2019-05-18 08:40:47,299-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '用户ID错误'}
+2019-05-18 08:40:47,430-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:47,500-verifyUserAuth-INFO-40-测试场景:姓名为空，实名认证失败
+2019-05-18 08:40:47,500-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011014, "true_name": None, "cre_id": "360428195607232233"}
+2019-05-18 08:40:47,590-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '真实姓名错误'}
+2019-05-18 08:40:47,715-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:47,785-verifyUserAuth-INFO-40-测试场景:身份证为空，实名认证失败
+2019-05-18 08:40:47,785-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011014, "true_name": "孙策", "cre_id": "360428195607232234"}
+2019-05-18 08:40:47,878-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号检验错误'}
+2019-05-18 08:40:48,015-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:48,086-verifyUserAuth-INFO-40-测试场景:身份证格式不正确，实名认证失败
+2019-05-18 08:40:48,086-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011014, "true_name": "孙策1", "cre_id": "3604281956"}
+2019-05-18 08:40:48,177-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号错误'}
+2019-05-18 08:40:48,310-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:48,383-verifyUserAuth-INFO-40-测试场景:用户实名认证成功
+2019-05-18 08:40:48,383-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100011014", "true_name": "黄丽丽", "cre_id": "120101199602246797"}
+2019-05-18 08:40:48,507-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:40:48,679-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:48,752-verifyUserAuth-INFO-40-测试场景:重复实名认证
+2019-05-18 08:40:48,753-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100011014", "true_name": "黄丽丽", "cre_id": "120101199602246797"}
+2019-05-18 08:40:48,857-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042033', 'retInfo': '该身份证已经进行过实名认证'}
+2019-05-18 08:40:48,859-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:40:48,927-verifyUserAuth-INFO-40------测试完成-----
+2019-05-18 08:40:48,937-bindBankCard-INFO-40------测试开始-----
+2019-05-18 08:40:48,961-bindBankCard-INFO-40-测试场景:绑卡成功
+2019-05-18 08:40:48,961-bindBankCard-DEBUG-42-请求参数:{"uid": "100011014","pay_pwd": "123456","mobile": "18205673747","cre_id": "120101199602246797","user_name": "黄丽丽","cardid": "6226095712899116 ","bank_type": "1001","bank_name": "建设银行","bank_area": None,"bank_city": None}
+2019-05-18 08:40:49,054-bindBankCard-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '银行卡号检验错误'}
+2019-05-18 08:40:49,056-bindBankCard-INFO-40-断言结果:FAIL
+2019-05-18 08:40:49,116-bindBankCard-INFO-40------测试完成-----
+2019-05-18 08:41:10,721-sendmcode-INFO-40-测试场景:手机号为空
+2019-05-18 08:41:10,723-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': None, 'tmpl_id': '1'}
+2019-05-18 08:41:10,799-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-18 08:41:10,799-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:41:10,868-sendmcode-INFO-40-测试场景:短信模板为空
+2019-05-18 08:41:10,868-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '15303961824', 'tmpl_id': None}
+2019-05-18 08:41:10,947-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '短信模板ID错误'}
+2019-05-18 08:41:10,948-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:41:11,017-sendmcode-INFO-40-测试场景:ip地址为空
+2019-05-18 08:41:11,017-sendmcode-DEBUG-42-请求参数:{'client_ip': None, 'mobile': '15303961824', 'tmpl_id': '1'}
+2019-05-18 08:41:11,099-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '用户IP不能为空'}
+2019-05-18 08:41:11,099-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:41:11,169-sendmcode-INFO-40-测试场景:手机号格式不对
+2019-05-18 08:41:11,169-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '181065747', 'tmpl_id': '1'}
+2019-05-18 08:41:11,255-sendmcode-DEBUG-42-响应参数:{'faultcode': 'soap:Server', 'faultstring': '手机号码错误'}
+2019-05-18 08:41:11,255-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:41:11,328-sendmcode-INFO-40-测试场景:发送短信成功
+2019-05-18 08:41:11,328-sendmcode-DEBUG-42-请求参数:{'client_ip': '127.0.0.1', 'mobile': '15303961824', 'tmpl_id': '1'}
+2019-05-18 08:41:11,699-sendmcode-INFO-40-查询结果:{'Fmobile_no': '15303961824', 'Ftmpl_id': 1, 'Fverify_code': '584622', 'Frela_key': None, 'Frela_info': None, 'Fchk_suc_times': 0, 'Fchk_err_times': 0, 'Fclient_ip': '127.0.0.1', 'Fsend_time': datetime.datetime(2019, 5, 18, 8, 41, 16), 'Fcheck_time': None, 'Fexpired_time': datetime.datetime(2019, 5, 18, 8, 47, 16), 'Fstandby1': None, 'Fstandby2': None}
+2019-05-18 08:41:11,699-sendmcode-INFO-40-测试结果:PASS
+2019-05-18 08:41:11,700-sendmcode-INFO-40-断言结果:PASS
+2019-05-18 08:41:11,776-UserRegister-INFO-40------测试开始-----
+2019-05-18 08:41:12,207-UserRegister-INFO-40-测试场景:输入验证码超时，注册不成功
+2019-05-18 08:41:12,207-UserRegister-DEBUG-42-请求参数:{"verify_code": "343266", "user_id": "刘备", "channel_id": "1", "pwd": "123456", "mobile": "13328263848", "ip": "127.0.0.1"}
+2019-05-18 08:41:12,335-UserRegister-DEBUG-42-预期结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-18 08:41:12,335-UserRegister-DEBUG-42-实际结果:{'retCode': '30010010', 'retInfo': '验证码已过期'}
+2019-05-18 08:41:12,467-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:41:12,534-UserRegister-INFO-40-测试场景:用户注册成功
+2019-05-18 08:41:12,535-UserRegister-DEBUG-42-请求参数:{"verify_code": "584622", "user_id": "叶杰", "channel_id": "1", "pwd": "123456", "mobile": "15303961824", "ip": "127.0.0.1"}
+2019-05-18 08:41:12,763-UserRegister-DEBUG-42-预期结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:41:12,763-UserRegister-DEBUG-42-实际结果:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:41:12,931-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:41:13,001-UserRegister-INFO-40-测试场景:已经注册过的不允许注册
+2019-05-18 08:41:13,001-UserRegister-DEBUG-42-请求参数:{"verify_code": "584622", "user_id": "叶杰", "channel_id": "1", "pwd": "123456", "mobile": "15303961824", "ip": "127.0.0.1"}
+2019-05-18 08:41:13,100-UserRegister-DEBUG-42-预期结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-18 08:41:13,100-UserRegister-DEBUG-42-实际结果:{'retCode': '20042003', 'retInfo': '该用户已存在'}
+2019-05-18 08:41:13,105-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:41:13,174-UserRegister-INFO-40-测试场景:输入别的手机号验证码
+2019-05-18 08:41:13,174-UserRegister-DEBUG-42-请求参数:{"verify_code": "584622", "user_id": "末年", "channel_id": "1", "pwd": "123456", "mobile": "18800001112", "ip": "127.0.0.1"}
+2019-05-18 08:41:13,296-UserRegister-DEBUG-42-预期结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-18 08:41:13,296-UserRegister-DEBUG-42-实际结果:{'retCode': '300100017', 'retInfo': '短信验证码已丢失'}
+2019-05-18 08:41:13,425-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:41:13,499-UserRegister-INFO-40-测试场景:验证码为空
+2019-05-18 08:41:13,499-UserRegister-DEBUG-42-请求参数:{"verify_code": None, "user_id": "末年1", "channel_id": "1", "pwd": "123456", "mobile": "18800001113", "ip": "127.0.0.1"}
+2019-05-18 08:41:13,588-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-18 08:41:13,588-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '验证码错误'}
+2019-05-18 08:41:13,729-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:41:13,801-UserRegister-INFO-40-测试场景:手机号格式不对
+2019-05-18 08:41:13,802-UserRegister-DEBUG-42-请求参数:{"verify_code": "584622", "user_id": "末年2", "channel_id": "1", "pwd": "123456", "mobile": "1880000112", "ip": "127.0.0.1"}
+2019-05-18 08:41:13,892-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:41:13,892-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:41:14,023-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:41:14,097-UserRegister-INFO-40-测试场景:手机号为空
+2019-05-18 08:41:14,097-UserRegister-DEBUG-42-请求参数:{"verify_code": "584622", "user_id": "末年3", "channel_id": "1", "pwd": "123456", "mobile": None, "ip": "127.0.0.1"}
+2019-05-18 08:41:14,187-UserRegister-DEBUG-42-预期结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:41:14,187-UserRegister-DEBUG-42-实际结果:{'retCode': '19001', 'retInfo': '手机号错误'}
+2019-05-18 08:41:14,318-UserRegister-INFO-40-断言结果:PASS
+2019-05-18 08:41:14,384-UserRegister-INFO-40------测试完成-----
+2019-05-18 08:41:14,395-verifyUserAuth-INFO-40------测试开始-----
+2019-05-18 08:41:14,592-verifyUserAuth-INFO-40-测试场景:未注册的实名认证失败
+2019-05-18 08:41:14,592-verifyUserAuth-DEBUG-42-请求参数:{"uid": "010223", "true_name": "曹操", "cre_id": "360428195607232231"}
+2019-05-18 08:41:14,691-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042002', 'retInfo': '用户不存在'}
+2019-05-18 08:41:14,831-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:41:14,894-verifyUserAuth-INFO-40-测试场景:用户ID空，实名认证失败
+2019-05-18 08:41:14,894-verifyUserAuth-DEBUG-42-请求参数:{"uid": None, "true_name": "刘备", "cre_id": "360428195607232232"}
+2019-05-18 08:41:14,986-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '用户ID错误'}
+2019-05-18 08:41:15,118-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:41:15,184-verifyUserAuth-INFO-40-测试场景:姓名为空，实名认证失败
+2019-05-18 08:41:15,185-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011015, "true_name": None, "cre_id": "360428195607232233"}
+2019-05-18 08:41:15,280-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '真实姓名错误'}
+2019-05-18 08:41:15,408-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:41:15,476-verifyUserAuth-INFO-40-测试场景:身份证为空，实名认证失败
+2019-05-18 08:41:15,476-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011015, "true_name": "孙策", "cre_id": "360428195607232234"}
+2019-05-18 08:41:15,556-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号检验错误'}
+2019-05-18 08:41:15,691-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:41:15,761-verifyUserAuth-INFO-40-测试场景:身份证格式不正确，实名认证失败
+2019-05-18 08:41:15,761-verifyUserAuth-DEBUG-42-请求参数:{"uid": 100011015, "true_name": "孙策1", "cre_id": "3604281956"}
+2019-05-18 08:41:15,857-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '身份证号错误'}
+2019-05-18 08:41:15,992-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:41:16,062-verifyUserAuth-INFO-40-测试场景:用户实名认证成功
+2019-05-18 08:41:16,062-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100011015", "true_name": "刘欣", "cre_id": "640501193205141496"}
+2019-05-18 08:41:16,207-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '0', 'retInfo': 'ok'}
+2019-05-18 08:41:16,375-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:41:16,447-verifyUserAuth-INFO-40-测试场景:重复实名认证
+2019-05-18 08:41:16,447-verifyUserAuth-DEBUG-42-请求参数:{"uid": "100011015", "true_name": "刘欣", "cre_id": "640501193205141496"}
+2019-05-18 08:41:16,551-verifyUserAuth-DEBUG-42-响应参数:{'retCode': '20042033', 'retInfo': '该身份证已经进行过实名认证'}
+2019-05-18 08:41:16,552-verifyUserAuth-INFO-40-断言结果:PASS
+2019-05-18 08:41:16,617-verifyUserAuth-INFO-40------测试完成-----
+2019-05-18 08:41:16,628-bindBankCard-INFO-40------测试开始-----
+2019-05-18 08:41:16,652-bindBankCard-INFO-40-测试场景:绑卡成功
+2019-05-18 08:41:16,652-bindBankCard-DEBUG-42-请求参数:{"uid": "100011015","pay_pwd": "123456","mobile": "18205673747","cre_id": "640501193205141496","user_name": "刘欣","cardid": "6226095712899116 ","bank_type": "1001","bank_name": "建设银行","bank_area": None,"bank_city": None}
+2019-05-18 08:41:16,747-bindBankCard-DEBUG-42-响应参数:{'retCode': '19001', 'retInfo': '银行卡号检验错误'}
+2019-05-18 08:41:16,753-bindBankCard-INFO-40-断言结果:FAIL
+2019-05-18 08:41:16,809-bindBankCard-INFO-40------测试完成-----

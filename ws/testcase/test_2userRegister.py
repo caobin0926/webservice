@@ -45,7 +45,7 @@ class TestUserRegister:
             self.logs.get_log('debug', '实际结果:{}'.format(case.actual))
             allure.attach('{}'.format(eval(case.expected)), '预期结果')
             allure.attach('{}'.format(case.actual), '实际结果')
-            print(case.actual)
+            # print(case.actual)
             assert eval(case.expected) == case.actual
             # 判断是否需要进行数据库中数据校验
             if case.issql == 'yes':
@@ -88,7 +88,7 @@ class TestUserRegister:
             self.logs.get_log('info','断言结果:{}'.format(case.result))
             allure.attach('{}'.format(case.result),'断言结果')
             TestUserRegister.ex.write_case(case.case_id,str(case.actual),case.result)
-            print(case.result)
+            # print(case.result)
 
     def teardown_class(self):
         self.logs.get_log('info','-----测试完成-----')

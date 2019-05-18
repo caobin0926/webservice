@@ -28,7 +28,7 @@ class TestSendMcode:
         self.client = WebServiceClient(TestSendMcode.data[0].url)  # 初始化
         moblie=phone()
         setattr(TestData,'Register_cell',moblie)
-        print(TestData.Register_cell)
+        # print(TestData.Register_cell)
 
     @pytest.mark.parametrize('case', data)
     def test_sendmcode(self, case):
