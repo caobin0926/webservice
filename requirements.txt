@@ -7,7 +7,7 @@ chardet==3.0.4
 colorama==0.4.1
 ddt==1.2.1
 decorator==4.4.0
-Django==2.0.5
+Django==2.2.13
 dogpile.cache==0.7.1
 enum34==1.1.6
 et-xmlfile==1.0.1
